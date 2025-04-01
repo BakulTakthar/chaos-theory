@@ -9,7 +9,7 @@ def lorenz(t, state, sigma=10, beta=8/3, rho=28):
     dzdt = x * y - beta * z
     return [dxdt, dydt, dzdt]
 
-def ode_solution_point(function, state0, time, dt=0.001):
+def ode_solution_point(function, state0, time, dt=0.01):
     solution = solve_ivp(
         function,
         t_span=(0, time),
@@ -30,7 +30,7 @@ class LorenzAttractor(ThreeDScene):
 
         # Solve the ODE
         state0 = [5, 5, 1]
-        points = ode_solution_point(lorenz, state0, 10)
+        points = ode_solution_point(lorenz, state0, 50)
         
         label_x = axes.get_x_axis_label("x").set_color(WHITE)
         label_y = axes.get_y_axis_label("y").set_color(WHITE)
@@ -50,13 +50,13 @@ class LorenzAttractor(ThreeDScene):
             return
 
         epsilon = 0.001
-        states = [ [0.5, 1 , 1.05 + n*epsilon] for n in range(2)]
+        states = [ [1, 1 , 1 + n*epsilon] for n in range(2)]
         curves = VGroup()
         
         colors = [RED, BLUE]
         
         for state, color in zip(states, colors):
-            points = ode_solution_point(lorenz, state, 10)
+            points = ode_solution_point(lorenz, state, 50)
             if points is None:
                 print("Error: No points returned from ODE solver.")
                 return

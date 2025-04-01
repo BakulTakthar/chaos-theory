@@ -1,1 +1,2 @@
 # chaos-theory
+## upon reading a few pages from James Glieck's very famous book 'Chaos' and not understanding all of it, i decided to look for lectures and found really good ones from Professor Steven Strogatz which were titled 'non linear dynamics and chaos' which i very likel deemed "too advanced" for my scope as of my 12th grade mind hence this repository is an effort to capture some of the essence of choas in its complete glory in a rather incomplete way.  
