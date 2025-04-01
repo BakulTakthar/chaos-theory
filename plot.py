@@ -1,4 +1,3 @@
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
@@ -60,3 +59,10 @@ ax4.set_title("Lorenz Attractor")
 # Adjust layout
 plt.tight_layout()
 plt.show()
+
+
+## to see what is the divergence of the DE system
+
+div = lorenz(0, state0)
+
+print(div)
